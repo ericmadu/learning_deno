@@ -1,6 +1,13 @@
 // Entrypoint file
+import { empty } from './array-operations';
 
-/** Returns `Hello World` in bold */
-export function getHelloWorld(): string {
-  return "Hello World";
+function getHelloWorld(): string {
+    return 'Hello World';
 }
+
+const _ = {
+    empty,
+    getHelloWorld,
+};
+
+export default _;
