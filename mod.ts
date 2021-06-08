@@ -1,5 +1,5 @@
 // Entrypoint file
-import { empty, union, unique, without } from './array-operations.ts';
+import { empty, groupBy, union, unique, without } from './array-operations.ts';
 
 function getHelloWorld(): string {
     return 'Hello World';
@@ -8,6 +8,7 @@ function getHelloWorld(): string {
 const _ = {
     empty,
     getHelloWorld,
+    groupBy,
     union,
     unique,
     without,
