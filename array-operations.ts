@@ -10,3 +10,7 @@ export const unique = (providedArray: any[]) => {
 export const union = (...arrays: any[]) => {
     return [...new Set(arrays.flat())];
 };
+
+export const without = (array: any[], ...toRemove: any) => {
+    return array.filter(e => !toRemove.includes(e));
+};
