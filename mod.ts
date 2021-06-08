@@ -1,5 +1,5 @@
 // Entrypoint file
-import { empty } from './array-operations';
+import { empty, union, unique } from './array-operations.ts';
 
 function getHelloWorld(): string {
     return 'Hello World';
@@ -8,6 +8,8 @@ function getHelloWorld(): string {
 const _ = {
     empty,
     getHelloWorld,
+    union,
+    unique,
 };
 
 export default _;
