@@ -2,9 +2,9 @@
     "compilerOptions": {
         "allowJs": true,
         "module": "esnext",
-        "resolveJsonModule": true,
-        "target": "esnext",
+        "target": "es2019",
         "experimentalDecorators": true,
-        "emitDecoratorMetadata": true
+        "emitDecoratorMetadata": true,
+        "noImplicitThis": false
     }
 }
