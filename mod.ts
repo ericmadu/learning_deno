@@ -1,17 +1,18 @@
 // Entrypoint file
-import { empty, groupBy, union, unique, without } from './array-operations.ts';
-
-function getHelloWorld(): string {
-    return 'Hello World';
-}
+import { empty, groupBy, union, unique, without, negate, countBy, sortBy, filter, filterObject, reject } from './array-operations.ts';
 
 const _ = {
     empty,
-    getHelloWorld,
     groupBy,
     union,
     unique,
     without,
+    negate,
+    countBy,
+    sortBy,
+    filter,
+    filterObject,
+    reject
 };
 
 export default _;
