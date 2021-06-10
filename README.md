@@ -8,6 +8,10 @@ const helloWorld = getHelloWorld();
 console.log(helloWorld); // Prints "Hello World"
 ```
 
+## References
+- https://dev.to/brunnerlivio/create-your-first-module-with-deno-575k
+- https://dev.to/craigmorten/how-to-publish-deno-modules-2cg6
+
 ## Authors
 - Eric Madureira
 - Sebastian Lozano
