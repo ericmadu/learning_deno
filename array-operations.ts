@@ -1,24 +1,4 @@
 // Operations and shortcuts for arrays (using pure JS/TS)
-export const empty = (providedArray: any[]) => {
-    return Array.isArray(providedArray) && providedArray.length;
-};
-
-export const groupBy = (providedArray: any[], key: string) => {
-    return providedArray.reduce((result: any, element: any) => {
-        (result[element[key]] = result[element[key]] || []).push(element);
-        return result;
-    }, {});
-};
-
-export const negate = function (predicate: Function) {
-    if (typeof predicate !== 'function') {
-        throw new Error("expected a function")
-    }
-    return function (...args: any) {
-        return !predicate.apply(this, args);
-    }
-}
-
 export const countBy = (providedArray: any[], key: string) => {
     const accumulator: any = {};
     providedArray.forEach((currentValue) => {
@@ -27,8 +7,8 @@ export const countBy = (providedArray: any[], key: string) => {
     return accumulator;
 };
 
-export const sortBy = (providedArray: any[], key: string) => {
-    return providedArray.sort((a, b) => (a[key] > b[key]) ? 1 : ((b[key] > a[key]) ? -1 : 0));
+export const empty = (providedArray: any[]) => {
+    return Array.isArray(providedArray) && providedArray.length;
 };
 
 export const filter = (providedArray: any[], predicate: Function) => {
@@ -59,17 +39,41 @@ export const filterObject = (object: any, predicate: Function) => {
     return result;
 };
 
+export const flattenDeep = (array: any[]) => {
+    return array.flat();
+};
+
+export const groupBy = (providedArray: any[], key: string) => {
+    return providedArray.reduce((result: any, element: any) => {
+        (result[element[key]] = result[element[key]] || []).push(element);
+        return result;
+    }, {});
+};
+
+export const negate = function (predicate: Function) {
+    if (typeof predicate !== 'function') {
+        throw new Error("expected a function")
+    }
+    return function (...args: any) {
+        return !predicate.apply(this, args);
+    }
+}
+
 export const reject = (providedArray: any[], predicate: Function) => {
     const func = Array.isArray(providedArray) ? filter : filterObject;
     return func(providedArray, negate(predicate));
 };
 
-export const unique = (providedArray: any[]) => {
-    return [...new Set(providedArray)];
+export const sortBy = (providedArray: any[], key: string) => {
+    return providedArray.sort((a, b) => (a[key] > b[key]) ? 1 : ((b[key] > a[key]) ? -1 : 0));
 };
 
 export const union = (...arrays: any[]) => {
     return [...new Set(arrays.flat())];
+};
+
+export const unique = (providedArray: any[]) => {
+    return [...new Set(providedArray)];
 };
 
 export const without = (array: any[], ...toRemove: any) => {
